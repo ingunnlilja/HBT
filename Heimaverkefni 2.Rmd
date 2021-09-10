@@ -1,0 +1,61 @@
+---
+output: 
+  bookdown::pdf_document2:
+    fig_caption: yes
+    toc: no
+    includes:
+      #before_body: template/fp.sty # Forsíða
+      in_header: template/header.tex # TeX haus
+    keep_tex: yes
+fontsize: 10pt
+geometry: margin=1in
+graphics: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(kableExtra)
+library(lattice)
+library(gridExtra)
+library(cowplot)
+library(latex2exp)
+library(knitr)
+```
+
+
+# Other exercises 1 {-}
+
+# (a) {-}
+
+Based on Problem 1 in take-home exam from fall 2014 (20%) In Lieblein and Zelen (1956) data on the endurance of 23 deep groove ball bearings is analyzed.  For each of the 23 ball bearings the number of revolutions before failure was collected. The data are inball_bearings_data.txt in million revolutions. The data are also shown in the table below,ordered from the smallest value to the largest value.
+
+```{r echo=FALSE, out.width="75%", fig.align="center"}
+include_graphics(path = "img/tafla.PNG", dpi = 3)
+```
+
+Let $y_i$ denote the observed number of revolutions before failure of the i-th ball bearing,
+$i= 1,...,n,(n= 23)$. Assume  that  they are  independent  and  follow  the  Rayleigh  distribution,  such  that  the density of $y_i$ is given by.
+$$p\left(y_{i} \mid \theta\right)=\theta y_{i} \exp \left(-\frac{\theta y_{i}^{2}}{2}\right), \quad y_{i} \geq 0, \quad i=1, \ldots, n$$
+
+and $p(y_i|\theta) = 0$ otherwise, where $\theta$ is an unknown parameter such that $\theta >0$. Further, assume that the prior density of $\theta$ is a gamma density with parameters $\alpha$ and $\beta$.
+
+
+
+
+# (a) {-} 
+
+Find the posterior distribution of $\theta$ (with the normalizing constant) in terms of $\alpha, \beta, y_{1}, \ldots, y_{n}$ Hint:
+conjugate distributions.
+
+
+# (b) {-}
+
+
+Calculate the mean and standard deviation of the posterior distribution when the observed data areas in the fileball_bearings_data.txt and $\alpha = 1$ and $\beta= 0.001$.
+
+
+# (c) {-}
+
+
+Draw a graph of the posterior density of $\theta$ using the same data as in (b).
